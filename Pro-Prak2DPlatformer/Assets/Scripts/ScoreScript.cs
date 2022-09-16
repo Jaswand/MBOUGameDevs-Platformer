@@ -16,16 +16,15 @@ public class ScoreScript : MonoBehaviour
         MyScore.text = "Score:" + ScoreNum;
     }
 
-    void OnCollisionEnter(UnityEngine.Collision collisionInfo)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collisionInfo.gameObject.tag == "Coin")
+        if (collision.gameObject.tag == "Coin")
         {
             ScoreNum += 1;
             MyScore.text = "Score" + ScoreNum;
-            Destroy(collisionInfo.gameObject);
+            Destroy(collision.gameObject);
 
         }
-
     }
 }
