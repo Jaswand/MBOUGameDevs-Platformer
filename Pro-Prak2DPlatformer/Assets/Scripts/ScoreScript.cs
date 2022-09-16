@@ -13,7 +13,7 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         ScoreNum = 0;
-        MyScore.text = "Score:" + ScoreNum;
+        MyScore.text = "Score: " + ScoreNum;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,7 +22,7 @@ public class ScoreScript : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             ScoreNum += 1;
-            MyScore.text = "Score" + ScoreNum;
+            MyScore.text = "Score: " + ScoreNum;
             Destroy(collision.gameObject);
 
         }

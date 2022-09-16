@@ -1,51 +1,98 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 16f;
-    private bool isFacingRight = true;
+    private enum MovementState { idle, running, jumping, falling }
 
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
 
-    void Update()
+    private Animator ani;
+    private Rigidbody2D rb;
+    private SpriteRenderer sprite;
+    private BoxCollider2D bc;
+    private bool canDoubleJump;
+
+    private float directionX = 0f;
+    public float moveSpeed = 7f;
+    public float jumpForce = 14f;
+
+    public LayerMask jumpableGround;
+
+    [SerializeField] private AudioSource jumpSoundEffect;
+
+    // Start is called before the first frame update
+    private void Start()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        bc = GetComponent<BoxCollider2D>();
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-
-        Flip();
     }
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    private void Update()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if(IsGrounded()) {
+            canDoubleJump = true;
+        }
+
+        directionX = Input.GetAxisRaw("Horizontal"); 
+        rb.velocity = new Vector2(directionX * moveSpeed, rb.velocity.y);
+
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (IsGrounded()) 
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            } else {
+                if (canDoubleJump) {
+                   rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                   canDoubleJump = false;
+                }
+            }
+        }
+        UpdateAnimation();
     }
+
+    private void UpdateAnimation()
+    {
+        MovementState state;
+        
+
+        if (directionX > 0f)
+        {
+            state = MovementState.running;
+            sprite.flipX = false;
+        }
+        else if (directionX < 0f)
+        {
+            state = MovementState.running;
+            sprite.flipX = true;
+        }
+        else 
+        {
+            state = MovementState.idle;
+        }
+
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+
+        ani.SetInteger("state", (int)state);
+    }
+
+
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    private void Flip()
-    {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
+        return Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
