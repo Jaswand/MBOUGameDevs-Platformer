@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Coin
   - Border
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sea
+    uniqueID: 3067389101
+    locked: 0
   - name: Background
     uniqueID: 3954277357
     locked: 0
