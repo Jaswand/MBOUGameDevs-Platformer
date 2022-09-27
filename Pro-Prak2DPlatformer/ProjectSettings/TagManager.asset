@@ -9,6 +9,7 @@ TagManager:
   - Border
   - Death
   - Checkpoint
+  - GM
   layers:
   - Default
   - TransparentFX
