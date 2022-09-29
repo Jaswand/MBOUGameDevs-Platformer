@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Foreground
+    uniqueID: 2544470835
+    locked: 0
   - name: Sea
     uniqueID: 3067389101
     locked: 0
