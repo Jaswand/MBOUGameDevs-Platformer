@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask jumpableGround;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource doubleJumpSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -46,10 +47,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IsGrounded()) 
             {
+                jumpSoundEffect.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                
             } else {
                 if (canDoubleJump) {
-                   rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    doubleJumpSoundEffect.Play();
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                    canDoubleJump = false;
                 }
             }
