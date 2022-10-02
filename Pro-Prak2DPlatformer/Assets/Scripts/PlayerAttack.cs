@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    private Animator ani;
 
     private GameObject attackArea = default;
 
@@ -15,32 +16,33 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-            if(Input.GetKeyDown(KeyCode.E))
-        {
-            Attack();
-        }
-               
-            if (attacking)
-        {
-            timer += Time.deltaTime;
-
-            if(timer >= timeToAttack)
-            {
-                timer = 0;
-                attacking = false;
-                attackArea.SetActive(attacking);
-            }
-        }
+       if(Input.GetKeyDown(KeyCode.E))
+       {
+          Attack();
+       }
+       if (attacking)
+       {
+          timer += Time.deltaTime;
+       }
+       if(timer >= timeToAttack)
+       {
+         timer = 0;
+         attacking = false;
+         attackArea.SetActive(attacking);
+       }
     }
+    
 
     private void Attack()
     {
         attacking = true;
         attackArea.SetActive(attacking);
+        ani.SetTrigger("attack");
     }
 }

@@ -956,6 +956,7 @@ GameObject:
   - component: {fileID: 572105387}
   - component: {fileID: 572105391}
   - component: {fileID: 572105392}
+  - component: {fileID: 572105393}
   m_Layer: 0
   m_Name: AngryPig
   m_TagString: Death
@@ -1090,8 +1091,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 1932417055}
-  - {fileID: 1617800682}
+  - {fileID: 1301211896}
   speed: 2
+--- !u!114 &572105393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572105386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad51440b45bc2a40887d394c79122a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &617746840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6309599118117444192, guid: e8bae36b607017047ace9061609051d9, type: 3}
@@ -4372,7 +4386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1932417056}
-  - {fileID: 1617800683}
+  - {fileID: 1301211897}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5362,6 +5376,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1301211896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301211897}
+  m_Layer: 0
+  m_Name: 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301211897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301211896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.52, y: -0.86182356, z: -1.002955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880680381}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1422246869
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,10 +5854,11 @@ PolygonCollider2D:
       - {x: -0.45999998, y: -0.45}
       - {x: -0.44, y: -0.52}
       - {x: -0.37, y: -0.64}
-      - {x: -0.35999998, y: -0.94}
-      - {x: -0.32, y: -0.96}
-      - {x: 0.22, y: -0.96}
-      - {x: 0.25, y: -0.9}
+      - {x: -0.35999998, y: -0.9075184}
+      - {x: -0.30051106, y: -0.8950369}
+      - {x: 0.038179338, y: -0.9015331}
+      - {x: 0.22, y: -0.90802944}
+      - {x: 0.28897786, y: -0.87401474}
       - {x: 0.17, y: -0.56}
       - {x: 0.26, y: -0.48999998}
 --- !u!114 &1622065091

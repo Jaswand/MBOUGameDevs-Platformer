@@ -5,22 +5,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
+    private Animator ani;
 
     private int MAX_HEALTH = 100;
-    // Update is called once per frame
-    void Update()
-    {
-        //dit is een  J = damage aan jezelf h = healing voor jezelf healt kan niet over 100
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Damage(10);
-        }
 
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            Heal(10);
-        }
+    void Start()
+    {
+        ani = GetComponent<Animator>();
     }
+
     public void Damage(int amount)
     {
         if(amount < 0)
@@ -30,9 +23,14 @@ public class Health : MonoBehaviour
 
         this.health -= amount;
 
+        if(health == 50)
+        {
+            ani.SetTrigger("hit");
+        }
+
         if(health <= 0)
         {
-
+            Die();
         }
     }
 
@@ -45,7 +43,7 @@ public class Health : MonoBehaviour
 
         bool wouldBeOverMaxHealth = health + amount > MAX_HEALTH;
 
-           if (wouldBeOverMaxHealth)
+        if (wouldBeOverMaxHealth)
         {
             this.health = MAX_HEALTH;
         }
@@ -57,8 +55,12 @@ public class Health : MonoBehaviour
     }
     
      private void Die()
+     {
+        ani.SetTrigger("death");
+     }
+
+    private void Destroy()
     {
-        Debug.Log("I am Dead");
-        //hieronder moet nog een deadth animation komen
+        Destroy(gameObject);
     }
 }
