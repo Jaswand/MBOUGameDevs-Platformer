@@ -19,12 +19,17 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask jumpableGround;
 
+    // Audio Sources
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource doubleJumpSoundEffect;
+
+    AudioSource myAudioSource;
 
     // Start is called before the first frame update
     private void Start()
     {
+        myAudioSource = GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -92,8 +97,6 @@ public class PlayerMovement : MonoBehaviour
 
         ani.SetInteger("state", (int)state);
     }
-
-
 
     private bool IsGrounded()
     {
