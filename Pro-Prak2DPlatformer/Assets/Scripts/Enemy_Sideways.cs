@@ -10,6 +10,7 @@ public class Enemy_Sideways : MonoBehaviour
     private bool movingLeft;
     private float leftEdge;
     private float rightEdge;
+    //test
 
     private void Awake()
     {
