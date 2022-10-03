@@ -9,6 +9,8 @@ public class ScoreScript : MonoBehaviour
     [SerializeField] public TextMeshProUGUI MyScore;
     [SerializeField] private int ScoreNum;
 
+    [SerializeField] private AudioSource coinSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class ScoreScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Coin")
         {
+            coinSoundEffect.Play();
             ScoreNum += 1;
             MyScore.text = "Score: " + ScoreNum;
             Destroy(collision.gameObject);
