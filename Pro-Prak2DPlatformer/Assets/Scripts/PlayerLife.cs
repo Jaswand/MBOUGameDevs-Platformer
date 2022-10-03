@@ -9,9 +9,6 @@ public class PlayerLife : MonoBehaviour
     private Animator ani;
 
     [SerializeField] private AudioSource deathSoundEffect;
-    [SerializeField] private AudioSource deathSoundEffect2;
-
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,8 +26,6 @@ public class PlayerLife : MonoBehaviour
     
     private void Die()
     {
-        deathSoundEffect.Play();
-        deathSoundEffect2.Play();
         rb.bodyType = RigidbodyType2D.Static;
         ani.SetTrigger("death");
     }
