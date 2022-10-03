@@ -23,11 +23,6 @@ public class Health : MonoBehaviour
 
         this.health -= amount;
 
-        if(health == 50)
-        {
-            ani.SetTrigger("hit");
-        }
-
         if(health <= 0)
         {
             Die();
