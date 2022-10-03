@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         {
             grounded = true;
         }
+
     }
 
     private void UpdateAnimation()
@@ -110,14 +111,6 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -.1f)
-        {
-            state = MovementState.falling;
-        }
 
         ani.SetInteger("state", (int)state);
     }
