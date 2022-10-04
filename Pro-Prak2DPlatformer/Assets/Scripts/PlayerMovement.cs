@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            jumpSoundEffect.Play();
             Jump();
         }
         ani.SetBool("grounded", grounded);

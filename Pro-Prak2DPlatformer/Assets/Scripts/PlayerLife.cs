@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour
     private Animator ani;
 
     [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource deathSoundEffect2;
     // Start is called before the first frame update
     private void Start()
     {
@@ -20,6 +21,8 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
+            deathSoundEffect.Play();
+            deathSoundEffect2.Play();
             Die();
         }
     }
