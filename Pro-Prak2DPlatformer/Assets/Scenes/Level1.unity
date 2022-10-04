@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237473248}
   - component: {fileID: 237473247}
-  - component: {fileID: 237473246}
+  - component: {fileID: 237473249}
   m_Layer: 0
   m_Name: Checkpoint 0
   m_TagString: Checkpoint
@@ -365,18 +365,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &237473246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237473245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51db7545b672157488479a579d763ab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &237473247
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -408,6 +396,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237473249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237473245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51db7545b672157488479a579d763ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstCheckpoint: {fileID: 0}
 --- !u!1 &342669354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,7 +5889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856766382}
   - component: {fileID: 1856766384}
-  - component: {fileID: 1856766383}
+  - component: {fileID: 1856766385}
   m_Layer: 0
   m_Name: Checkpoint 1
   m_TagString: Checkpoint
@@ -5911,18 +5912,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856766383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856766380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51db7545b672157488479a579d763ab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &1856766384
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5939,6 +5928,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 3.4184675}
   serializedVersion: 2
   m_Radius: 3.9184675
+--- !u!114 &1856766385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856766380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51db7545b672157488479a579d763ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstCheckpoint: {fileID: 0}
 --- !u!1 &1884813228
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,7 +6518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77225b4389160943885f32a34021b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckpointPos: {x: 0.62, y: 3.31}
+  checkpoints:
+  - {fileID: 237473248}
+  - {fileID: 1856766382}
 --- !u!4 &2076494892
 Transform:
   m_ObjectHideFlags: 0
