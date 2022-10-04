@@ -8,6 +8,10 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private Animator ani;
 
+    private Vector3 respawnPoint;
+    private GameObject fallDetector;
+    private Collider2D _collider;
+
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect2;
     // Start is called before the first frame update
@@ -15,6 +19,7 @@ public class PlayerLife : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        respawnPoint = transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,6 +29,19 @@ public class PlayerLife : MonoBehaviour
             deathSoundEffect.Play();
             deathSoundEffect2.Play();
             Die();
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
+        }
+        else if (collision.tag == "Checkpoint")
+        {
+            Debug.Log("checkpoint hit");
+            respawnPoint = transform.position;
         }
     }
     
@@ -31,10 +49,14 @@ public class PlayerLife : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         ani.SetTrigger("death");
+        transform.position = respawnPoint;
     }
 
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
+
+ 
 }
