@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8369355039516621957}
   - component: {fileID: 8369355039516621956}
   - component: {fileID: 2949600096770263352}
+  - component: {fileID: 7059061742955405426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -196,8 +197,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aa78f3cb077a64d9b1bd7a4312a622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8369355039516622008}
-  groundCheck: {fileID: 0}
-  groundLayer:
+  moveSpeed: 7
+  jumpForce: 14
+  jumpableGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  jumpSoundEffect: {fileID: 0}
+--- !u!114 &7059061742955405426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369355039516622012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea85758e43d6444b957509af80234ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

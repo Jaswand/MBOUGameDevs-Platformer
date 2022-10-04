@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private enum MovementState { idle, running, jumping, falling }
 
+    private enum MovementState { idle, running, jumping, falling }
 
     private Animator ani;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private BoxCollider2D bc;
     private bool canDoubleJump;
+
+    private bool playerJump = false;
+
+    private bool grounded;
 
     private float directionX = 0f;
     public float moveSpeed = 7f;
@@ -34,27 +39,57 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(IsGrounded()) {
+        if (IsGrounded()) {
             canDoubleJump = true;
         }
 
-        directionX = Input.GetAxisRaw("Horizontal"); 
+        directionX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(directionX * moveSpeed, rb.velocity.y);
+        ani.SetFloat("run", Mathf.Abs(directionX));
 
-        
         if (Input.GetButtonDown("Jump"))
         {
-            if (IsGrounded()) 
+            jumpSoundEffect.Play();
+            Jump();
+        }
+        ani.SetBool("grounded", grounded);
+
+        UpdateAnimation();
+    }
+
+    private void Jump()
+    {
+        grounded = false;
+        playerJump = true;
+        ani.SetBool("jump", true);
+
+        if (IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+        }
+        else
+        {
+            if (canDoubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            } else {
-                if (canDoubleJump) {
-                   rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                   canDoubleJump = false;
-                }
+                canDoubleJump = false;
             }
         }
-        UpdateAnimation();
+    }
+    // Zorgt dat grounded true wordt als het "ground" tags aanraakt
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+
+        if (collision.gameObject.tag == "Death")
+        {
+            grounded = true;
+        }
+
     }
 
     private void UpdateAnimation()
@@ -77,14 +112,6 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -.1f)
-        {
-            state = MovementState.falling;
-        }
 
         ani.SetInteger("state", (int)state);
     }
