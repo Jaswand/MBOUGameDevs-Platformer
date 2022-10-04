@@ -49,7 +49,6 @@ public class PlayerLife : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         ani.SetTrigger("death");
-        transform.position = respawnPoint;
     }
 
     private void RestartLevel()
