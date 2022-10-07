@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D bc;
     private bool canDoubleJump;
 
-    private bool playerJump = false;
 
     private bool grounded;
 
@@ -60,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         grounded = false;
-        playerJump = true;
         ani.SetBool("jump", true);
 
         if (IsGrounded())
