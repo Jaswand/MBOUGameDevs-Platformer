@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.E))
+       if(Input.GetMouseButtonDown(0))
        {
           Attack();
        }
@@ -36,8 +36,24 @@ public class PlayerAttack : MonoBehaviour
          attacking = false;
          attackArea.SetActive(attacking);
        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Attack();
+        }
+        if (attacking)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= timeToAttack)
+        {
+            timer = 0;
+            attacking = false;
+            attackArea.SetActive(attacking);
+        }
     }
     
+
 
     private void Attack()
     {
