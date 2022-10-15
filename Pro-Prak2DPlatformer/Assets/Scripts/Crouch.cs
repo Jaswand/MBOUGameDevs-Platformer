@@ -19,9 +19,14 @@ public class Crouch : MonoBehaviour
             IsCrouch = !IsCrouch;
             CrouchFunction();
         }
+
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
-            DashFunction();
+            ani.SetTrigger("dash");
+        }
+        else
+        {
+            ani.ResetTrigger("dash");
         }
     }
 
@@ -39,13 +44,6 @@ public class Crouch : MonoBehaviour
 
     void DashFunction()
     {
-        if (IsCrouch == true)
-        {
-            ani.SetTrigger("dash");
-        } 
-        else
-        {
-            ani.ResetTrigger("dash");
-        }
+
     }
 }
