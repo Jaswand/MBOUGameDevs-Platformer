@@ -12,8 +12,7 @@ public class Powerups : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
+     
 
             StartCoroutine( Pickup(other) ); 
         }
@@ -21,6 +20,9 @@ public class Powerups : MonoBehaviour
 
     IEnumerator Pickup(Collider2D player)
     {
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
         PlayerMovement stats = player.GetComponent<PlayerMovement>();

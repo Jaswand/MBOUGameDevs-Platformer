@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
 
+    public float maxSpeed = 20f;
+
     private float directionX = 0f;
     public float moveSpeed = 7f;
     public float jumpForce = 14f;
@@ -39,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (IsGrounded()) {
+        if (IsGrounded())
+        {
             canDoubleJump = true;
         }
 
@@ -55,8 +58,12 @@ public class PlayerMovement : MonoBehaviour
         ani.SetBool("grounded", grounded);
 
         UpdateAnimation();
-    }
 
+        if (rb.velocity.x > maxSpeed)
+        {
+            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+        }
+    }
     private void Jump()
     {
         grounded = false;
