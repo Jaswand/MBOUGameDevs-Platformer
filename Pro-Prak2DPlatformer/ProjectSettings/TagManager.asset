@@ -10,6 +10,7 @@ TagManager:
   - Death
   - Checkpoint
   - GM
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
     [SerializeField] private int health = 100;
     private Animator ani;
 
@@ -15,7 +14,7 @@ public class Health : MonoBehaviour
         ani = GetComponent<Animator>();
     }
 
-    public void Damage(int amount)
+  public void Damage(int amount)
     {
         if(amount < 0)
         {
@@ -25,7 +24,7 @@ public class Health : MonoBehaviour
         this.health -= amount;
 
         if(health <= 0)
-        {
+        {  
             Die();
         }
     }
