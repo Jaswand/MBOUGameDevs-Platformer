@@ -10,7 +10,6 @@ public class PlayerLife : MonoBehaviour
     private int MAX_HEALTH = 100;
     private Rigidbody2D rb;
     private Animator ani;
-
     private Vector3 respawnPoint;
     private GameObject fallDetector;
     private Collider2D _collider;
@@ -47,7 +46,7 @@ public class PlayerLife : MonoBehaviour
             deathSoundEffect.Play();
             deathSoundEffect2.Play();
             Damage(100);
-        } 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
