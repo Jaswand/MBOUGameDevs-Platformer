@@ -6,12 +6,14 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     private Animator ani;
+    private Rigidbody2D rb;
 
     private int MAX_HEALTH = 100;
 
     void Start()
     {
         ani = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Damage(int amount)
@@ -52,6 +54,8 @@ public class Health : MonoBehaviour
      private void Die()
      {
         ani.SetTrigger("death");
+        rb.bodyType = RigidbodyType2D.Static;
+
      }
 
     private void Destroy()
