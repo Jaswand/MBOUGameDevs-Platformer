@@ -10,7 +10,6 @@ TagManager:
   - Death
   - Checkpoint
   - GM
-  - Ladder
   layers:
   - Default
   - TransparentFX
