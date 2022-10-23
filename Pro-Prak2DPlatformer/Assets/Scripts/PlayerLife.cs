@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public static PlayerLife Instance { get; set; }
+    [SerializeField] public int health = 100;
+    private int MAX_HEALTH = 100;
     private Rigidbody2D rb;
     private Animator ani;
-
     private Vector3 respawnPoint;
     private GameObject fallDetector;
     private Collider2D _collider;
@@ -20,6 +22,15 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         respawnPoint = transform.position;
+
+         if ( Instance != null && Instance != this )
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,8 +39,14 @@ public class PlayerLife : MonoBehaviour
         {
             deathSoundEffect.Play();
             deathSoundEffect2.Play();
-            Die();
+            Damage(10);
         } 
+        if (collision.gameObject.CompareTag("Border"))
+        {
+            deathSoundEffect.Play();
+            deathSoundEffect2.Play();
+            Damage(100);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,11 +61,51 @@ public class PlayerLife : MonoBehaviour
             respawnPoint = transform.position;
         }
     }
+
+    public void Damage(int amount)
+    {
+        if(amount < 0)
+        {
+            throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
+        }
+
+        this.health -= amount;
+
+        if(health <= 0)
+        {  
+            Die();
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        if (amount < 0)
+        {
+            throw new System.ArgumentOutOfRangeException("Cannot have negative Healing");
+        }
+
+        bool wouldBeOverMaxHealth = health + amount > MAX_HEALTH;
+
+        if (wouldBeOverMaxHealth)
+        {
+            this.health = MAX_HEALTH;
+        }
+        else 
+        {
+            this.health += amount;
+        }
+        
+    }
     
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
         ani.SetTrigger("death");
+    }
+
+     private void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     private void RestartLevel()
