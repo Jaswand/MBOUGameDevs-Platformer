@@ -36,5 +36,9 @@ public class Powerups : MonoBehaviour
 
         Destroy(gameObject);
     }
-      
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }   
