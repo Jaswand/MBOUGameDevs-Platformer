@@ -39,7 +39,7 @@ public class PlayerLife : MonoBehaviour
         {
             deathSoundEffect.Play();
             deathSoundEffect2.Play();
-            Damage(10);
+            Damage(50);
         } 
         if (collision.gameObject.CompareTag("Border"))
         {
