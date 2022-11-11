@@ -14,6 +14,6 @@ public class levelselector : MonoBehaviour {
     }
 
     public void OpenScene() { 
-       SceneManager.LoadScene("Level " + level.ToString());
+       SceneManager.LoadScene("level " + level.ToString());
     }
 }
