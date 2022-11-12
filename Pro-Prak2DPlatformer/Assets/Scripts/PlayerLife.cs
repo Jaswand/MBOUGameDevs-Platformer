@@ -77,7 +77,26 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
+    private void Die()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        ani.SetTrigger("death");
+    }
+
+     private void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+
+
+    /* public void Heal(int amount)
     {
         if (amount < 0)
         {
@@ -94,24 +113,7 @@ public class PlayerLife : MonoBehaviour
         {
             this.health += amount;
         }
-        
-    }
-    
-    private void Die()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
-        ani.SetTrigger("death");
-    }
-
-     private void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    } */
     
 
  

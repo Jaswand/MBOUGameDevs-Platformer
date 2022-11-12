@@ -54,8 +54,6 @@ public class Health : MonoBehaviour
      private void Die()
      {
         ani.SetTrigger("death");
-        rb.bodyType = RigidbodyType2D.Static;
-
      }
 
     private void Destroy()

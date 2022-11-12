@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1622065100}
   - component: {fileID: 1622065101}
   - component: {fileID: 1622065102}
-  - component: {fileID: 1622065082}
   - component: {fileID: 1622065091}
   m_Layer: 0
   m_Name: Player
@@ -245,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19a615539005f549bf0d955d214ef24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   deathSoundEffect: {fileID: 1622065100}
   deathSoundEffect2: {fileID: 1622065099}
 --- !u!95 &8369355039516621956
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aa78f3cb077a64d9b1bd7a4312a622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 20
   moveSpeed: 7
   jumpForce: 14
   jumpableGround:
@@ -730,19 +731,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1622065082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8369355039516622012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad51440b45bc2a40887d394c79122a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!114 &1622065091
 MonoBehaviour:
   m_ObjectHideFlags: 0
