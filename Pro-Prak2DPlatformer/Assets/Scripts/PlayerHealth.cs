@@ -19,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         slider.value=PlayerLife.Instance.health;
-        text.text="Health: " +PlayerLife.Instance.health;
-        
+        text.text = "Health: " + PlayerLife.Instance.health;   
     }
 }

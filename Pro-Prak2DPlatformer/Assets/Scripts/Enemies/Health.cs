@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     private Animator ani;
     private Rigidbody2D rb;
+    public Slider slider;
 
-    private int MAX_HEALTH = 100;
+
 
     void Start()
     {
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+       slider.value = health;
     }
 
     public void Damage(int amount)
@@ -30,26 +36,6 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-
-    public void Heal(int amount)
-    {
-        if (amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative Healing");
-        }
-
-        bool wouldBeOverMaxHealth = health + amount > MAX_HEALTH;
-
-        if (wouldBeOverMaxHealth)
-        {
-            this.health = MAX_HEALTH;
-        }
-        else 
-        {
-            this.health += amount;
-        }
-        
-    }
     
      private void Die()
      {
@@ -60,4 +46,5 @@ public class Health : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }

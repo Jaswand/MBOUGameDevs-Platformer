@@ -11,6 +11,7 @@ TagManager:
   - Checkpoint
   - GM
   - Ladder
+  - Enemy
   layers:
   - Default
   - TransparentFX
