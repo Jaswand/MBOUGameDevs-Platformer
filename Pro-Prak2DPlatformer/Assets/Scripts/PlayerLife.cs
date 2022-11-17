@@ -37,14 +37,10 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
-            deathSoundEffect.Play();
-            deathSoundEffect2.Play();
             Damage(50);
         } 
         if (collision.gameObject.CompareTag("Border"))
         {
-            deathSoundEffect.Play();
-            deathSoundEffect2.Play();
             Damage(100);
         }
     }
@@ -99,6 +95,8 @@ public class PlayerLife : MonoBehaviour
     
     private void Die()
     {
+        deathSoundEffect.Play();
+        deathSoundEffect2.Play();
         rb.bodyType = RigidbodyType2D.Static;
         ani.SetTrigger("death");
     }
