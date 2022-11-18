@@ -58,6 +58,7 @@ public class PlayerLife : MonoBehaviour
             Debug.Log("checkpoint hit");
             respawnPoint = transform.position;
         }
+   
     }
 
     public void Damage(int amount)

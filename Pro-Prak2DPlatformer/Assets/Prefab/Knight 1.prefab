@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 8518699104881583377}
   - component: {fileID: 8518699104881583376}
   - component: {fileID: 8518699104462068079}
+  - component: {fileID: 6014448364500531064}
   m_Layer: 0
   m_Name: Knight 1
   m_TagString: Enemy
@@ -378,8 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 1.2
-  colliderDistance: 0.87
   damage: 25
+  colliderDistance: 0.87
   boxCollider: {fileID: 8518699104881583391}
   playerLayer:
     serializedVersion: 2
@@ -402,6 +403,18 @@ MonoBehaviour:
   speed: 5
   idleDuration: 5
   anim: {fileID: 8518699104881583380}
+--- !u!114 &6014448364500531064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518699104881583382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed4ea6493af7e04ebc6a4b9ea1248da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8518699104931883799
 GameObject:
   m_ObjectHideFlags: 0
