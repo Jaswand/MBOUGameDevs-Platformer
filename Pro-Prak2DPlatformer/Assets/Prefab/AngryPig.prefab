@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 3916529939861114250}
   - component: {fileID: 3916529939861114261}
   - component: {fileID: 3916529939861114260}
-  - component: {fileID: -3168210038000037682}
   m_Layer: 0
   m_Name: AngryPig
   m_TagString: Death
@@ -304,27 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   slider: {fileID: 3840057259210612659}
---- !u!50 &-3168210038000037682
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3916529939861114255}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4559587884909452632
 GameObject:
   m_ObjectHideFlags: 0
