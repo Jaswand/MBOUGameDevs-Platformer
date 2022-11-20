@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
     private Rigidbody2D rb;
     public Slider slider;
 
-
-
     void Start()
     {
         ani = GetComponent<Animator>();
