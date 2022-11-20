@@ -18,4 +18,8 @@ public class SettingsMenu : MonoBehaviour
     {
         mainMixer.SetFloat("Volume", volume);
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
