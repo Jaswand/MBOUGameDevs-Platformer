@@ -16,6 +16,8 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect2;
+    [SerializeField] private AudioSource Rumbling;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -44,6 +46,11 @@ public class PlayerLife : MonoBehaviour
         {
             deathSoundEffect.Play();
             Damage(100);
+        }
+        if (collision.gameObject.CompareTag("Music"))
+        {
+            Rumbling.Play();
+
         }
     }
 

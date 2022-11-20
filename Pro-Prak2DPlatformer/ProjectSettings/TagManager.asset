@@ -12,6 +12,7 @@ TagManager:
   - GM
   - Ladder
   - Enemy
+  - Music
   layers:
   - Default
   - TransparentFX
