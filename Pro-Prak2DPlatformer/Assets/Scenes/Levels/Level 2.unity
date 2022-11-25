@@ -1539,6 +1539,7 @@ GameObject:
   - component: {fileID: 645077562}
   - component: {fileID: 645077564}
   - component: {fileID: 645077563}
+  - component: {fileID: 645077565}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -1563,7 +1564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -383.98, y: 59}
+  m_AnchoredPosition: {x: -830, y: 82}
   m_SizeDelta: {x: 198.19, y: 44.3994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645077563
@@ -1663,6 +1664,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645077561}
   m_CullTransparentMesh: 1
+--- !u!114 &645077565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645077561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9782328a92310b4985dba253339c1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 645077563}
+  currentTime: 0
+  countDown: 0
+  hasLimit: 0
+  timerLimit: 0
+  hasFormat: 1
+  format: 0
 --- !u!1 &651614196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,7 +2889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393, y: 150}
+  m_AnchoredPosition: {x: -834, y: 150}
   m_SizeDelta: {x: 193.9622, y: 57.6233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392169811
@@ -3196,7 +3216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 131.43, y: 90}
+  m_AnchoredPosition: {x: 131.43, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580131522
@@ -53565,6 +53585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1622065082, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+    - {fileID: 13429672804031030, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
 --- !u!1 &1752883473 stripped
 GameObject:

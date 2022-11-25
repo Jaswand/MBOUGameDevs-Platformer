@@ -5,8 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     private int damage = 50;
-
-
+    private float directionX = 0f;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
