@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PauseMenuLoader : MonoBehaviour
@@ -35,6 +36,13 @@ public class PauseMenuLoader : MonoBehaviour
 
             }
         }
+    }
+
+
+    public void MainMenu()
+    {
+        Resume();
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void Resume()
