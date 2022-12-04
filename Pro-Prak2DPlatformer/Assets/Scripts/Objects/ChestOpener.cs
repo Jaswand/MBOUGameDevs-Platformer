@@ -16,7 +16,7 @@ public class ChestOpener : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         SecretNum = 0;
-        MyScore.text = "Secrets:"+SecretNum+"/1";
+        MyScore.text = "Secrets: "+SecretNum+"/1";
         ChestText.SetActive(false);
     }
 
