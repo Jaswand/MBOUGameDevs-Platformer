@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChestOpener : MonoBehaviour
 {
+    [SerializeField] public TextMeshProUGUI MyScore;
+    [SerializeField] private int SecretNum;
     public GameObject Chest;
     private Animator ani;
     public GameObject ChestText;
@@ -12,6 +15,9 @@ public class ChestOpener : MonoBehaviour
     void Start()
     {
         ani = GetComponent<Animator>();
+        SecretNum = 0;
+        MyScore.text = "Secrets:"+SecretNum+"/1";
+        ChestText.SetActive(false);
     }
 
 
@@ -32,10 +38,13 @@ public class ChestOpener : MonoBehaviour
     {
         if(ani.GetBool("open") == true && Input.GetKeyDown(KeyCode.F))
         {
-            ChestText.SetActive(true);
-        } else if (ani.GetBool("open") == false)
+            Destroy(gameObject);
+            SecretNum += 1;
+            MyScore.text = "Secrets:" + SecretNum + "/1";
+        }
+        else if (ani.GetBool("open") == true)
         {
-            ChestText.SetActive(false);
+            ChestText.SetActive(true);
         }
     }
 }
