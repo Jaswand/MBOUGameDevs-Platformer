@@ -18,14 +18,18 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (timer > 2)
+        if (distance < 15)
         {
-            timer = 0;
-            shoot();
+            timer += Time.deltaTime;
+
+            if (timer > 2)
+            {
+                timer = 0;
+                shoot();
+            }
         }
     }
 
