@@ -16,7 +16,7 @@ public class ProjectileDestroy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.5)
