@@ -53527,6 +53527,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
+    - target: {fileID: 2949600096770263352, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: jumpSoundEffect
+      value: 
+      objectReference: {fileID: 1933968914}
     - target: {fileID: 8369355039516621957, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: Rumbling
       value: 
@@ -54032,6 +54036,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1392169811}
   text: {fileID: 451370113}
+--- !u!82 &1933968914 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1622065102, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+  m_PrefabInstance: {fileID: 1752883472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026140807
 GameObject:
   m_ObjectHideFlags: 0

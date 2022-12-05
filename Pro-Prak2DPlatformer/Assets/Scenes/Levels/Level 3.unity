@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -100889,6 +100889,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
+    - target: {fileID: 2949600096770263352, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: jumpSoundEffect
+      value: 
+      objectReference: {fileID: 1933968914}
     - target: {fileID: 8369355039516621957, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: Rumbling
       value: 
@@ -101665,6 +101669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 293072033}
   text: {fileID: 846414659}
+--- !u!82 &1933968914 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1622065102, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+  m_PrefabInstance: {fileID: 1752883472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1940656223
 PrefabInstance:
   m_ObjectHideFlags: 0
