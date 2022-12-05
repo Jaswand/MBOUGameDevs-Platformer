@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 400850387669708799}
   - component: {fileID: 7040698771674535627}
   - component: {fileID: 5620412016980096548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2579048634211874479}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 3916529939861114250}
   - component: {fileID: 3916529939861114261}
   - component: {fileID: 3916529939861114260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AngryPig
   m_TagString: Death
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2826682897391610162}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 8765473465531677228}
   - component: {fileID: 212069473508038964}
   - component: {fileID: 6120064562209482528}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3644541796453883220}
   - component: {fileID: 3840057259210612659}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 4463657885437117165}
   - component: {fileID: 1474190677903035221}
   - component: {fileID: 5335909165578061851}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1089698885914648820}
   - component: {fileID: 3602512357729675339}
   - component: {fileID: 8187313472780133310}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
