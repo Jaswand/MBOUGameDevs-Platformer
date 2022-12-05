@@ -6024,7 +6024,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: f80875e604fce3442847f3a534494023, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -11142,12 +11142,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1622065102}
     - target: {fileID: 5756239994103418158, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6669786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756239994103418158, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: m_Size.y
-      value: 1.9046842
+      value: 1.7321161
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756239994103418158, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08862997
       objectReference: {fileID: 0}
     - target: {fileID: 5756239994103418158, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: m_Offset.y
-      value: 0.0520162
+      value: 0.036662042
       objectReference: {fileID: 0}
     - target: {fileID: 8369355039516621957, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: deathSoundEffect
@@ -11157,6 +11165,18 @@ PrefabInstance:
       propertyPath: deathSoundEffect2
       value: 
       objectReference: {fileID: 1622065099}
+    - target: {fileID: 8369355039516622009, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.31994453
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369355039516622009, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f80875e604fce3442847f3a534494023, type: 2}
+    - target: {fileID: 8369355039516622009, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.072534814
+      objectReference: {fileID: 0}
     - target: {fileID: 8369355039516622010, guid: 4482bfd8f3dc9b84590da3af1de3ce3a, type: 3}
       propertyPath: MyScore
       value: 

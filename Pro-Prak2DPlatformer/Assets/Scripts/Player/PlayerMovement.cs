@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator ani;
     private Rigidbody2D rb;
     public SpriteRenderer sprite;
-    private CapsuleCollider2D bc;
+    private BoxCollider2D bc;
     private bool canDoubleJump;
 
 
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        bc = GetComponent<CapsuleCollider2D>();
+        bc = GetComponent<BoxCollider2D>();
 
     }
 
