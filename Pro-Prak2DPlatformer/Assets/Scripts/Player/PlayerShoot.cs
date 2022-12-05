@@ -22,6 +22,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(1) && !isShooting)
+        {
+            StartCoroutine(Shoot());
+        }
         if (Input.GetKeyDown(KeyCode.R) && !isShooting)
         {
             StartCoroutine(Shoot());
