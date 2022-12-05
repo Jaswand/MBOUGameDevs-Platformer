@@ -19,7 +19,7 @@ public class ProjectileDestroy : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        if (timeLeft < 0.998)
+        if (timeLeft < 0.5)
         {
             Debug.Log("Time's up!!!!");
             Destroy(gameObject);
