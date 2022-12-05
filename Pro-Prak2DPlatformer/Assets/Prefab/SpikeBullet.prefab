@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7087306846497459791}
   - component: {fileID: 7087306846497459790}
   - component: {fileID: 7087306846497459784}
-  - component: {fileID: 1364538599260043216}
   - component: {fileID: -1822401901684051631}
+  - component: {fileID: 8236497657254799789}
   m_Layer: 0
   m_Name: SpikeBullet
   m_TagString: Untagged
@@ -108,19 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1364538599260043216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7087306846497459789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf73a7cc85471b4b81cb074249b9ae6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 5
 --- !u!61 &-1822401901684051631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.18}
   m_EdgeRadius: 0
+--- !u!114 &8236497657254799789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087306846497459789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a129877972bb1ef438318f9358b82486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 5
