@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxSpeed = 20f;
 
-    private float directionX = 0f;
+    public float directionX = 0f;
     public float moveSpeed = 7f;
     public float jumpForce = 14f;
 
@@ -103,15 +103,10 @@ public class PlayerMovement : MonoBehaviour
         MovementState state;
         
 
-        if (directionX > 0f)
+        if (directionX != 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
-        }
-        else if (directionX < 0f)
-        {
-            state = MovementState.running;
-            sprite.flipX = true;
+            transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x) * directionX, transform.localScale.y);
         }
         else 
         {

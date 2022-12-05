@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 6319512173515602199}
   - component: {fileID: 6161680061508118075}
   - component: {fileID: 13429672804031030}
+  - component: {fileID: -4150207162195183064}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -285,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   maxSpeed: 20
+  directionX: 0
   moveSpeed: 7
   jumpForce: 14
   jumpableGround:
@@ -300,7 +302,7 @@ AudioSource:
   m_GameObject: {fileID: 8369355039516622012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 15b102aaed927124296ce38a04edcaeb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -396,7 +398,7 @@ AudioSource:
   m_GameObject: {fileID: 8369355039516622012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 09085b7aeac97a44dae5b734b583d5b5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -492,7 +494,7 @@ AudioSource:
   m_GameObject: {fileID: 8369355039516622012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
   m_audioClip: {fileID: 8300000, guid: b873f66cef6b8bd42b8ba5e4fe46ef50, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -588,7 +590,7 @@ AudioSource:
   m_GameObject: {fileID: 8369355039516622012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6e2860c0c7bbfd140a2f064f1f86c17c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 683a4a465cfeb864c912a390268b8143, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -742,3 +744,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   text: {fileID: 0}
+--- !u!114 &-4150207162195183064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369355039516622012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5bc12a18280e346bc4774860780f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSpeed: 900
+  shootTimer: 1
+  shootPosition: {fileID: 0}
+  projectile: {fileID: 0}

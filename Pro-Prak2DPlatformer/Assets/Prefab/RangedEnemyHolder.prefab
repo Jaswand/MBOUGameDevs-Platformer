@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2264042030120584098}
   - component: {fileID: 2264042030120584101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireballHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2264042030923191159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangedEnemyHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2264042031184286489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 5086411378052354407}
   - component: {fileID: 5086411378052354405}
   - component: {fileID: 5086411378052354404}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 5086411378236874592}
   - component: {fileID: 5086411378236874609}
   - component: {fileID: 5086411378236874611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ranged
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -384,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed4ea6493af7e04ebc6a4b9ea1248da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
 --- !u!1 &5086411378301803055
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086411378301803052}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +432,7 @@ GameObject:
   - component: {fileID: 5086411378798750194}
   - component: {fileID: 5086411378798750192}
   - component: {fileID: 5086411378798750195}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +509,7 @@ GameObject:
   - component: {fileID: 5086411378887031477}
   - component: {fileID: 5086411378887031476}
   - component: {fileID: 5086411378887031479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +609,7 @@ GameObject:
   - component: {fileID: 5086411379252415824}
   - component: {fileID: 5086411379252415838}
   - component: {fileID: 5086411379252415825}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5086411379412014618}
   - component: {fileID: 5086411379412014619}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086411379550703533}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,6 +860,10 @@ PrefabInstance:
     - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
       propertyPath: m_Name
       value: EnemyFireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
       propertyPath: m_IsActive
@@ -961,6 +964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFireball (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
 --- !u!4 &1084716673119449736 stripped
@@ -1047,6 +1054,10 @@ PrefabInstance:
     - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
       propertyPath: m_Name
       value: EnemyFireball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
@@ -1135,6 +1146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFireball (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
 --- !u!1 &1084716673295489520 stripped
@@ -1221,6 +1236,10 @@ PrefabInstance:
     - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
       propertyPath: m_Name
       value: EnemyFireball (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
@@ -1309,6 +1328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFireball (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
 --- !u!1 &1084716673615580348 stripped
@@ -1395,6 +1418,10 @@ PrefabInstance:
     - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
       propertyPath: m_Name
       value: EnemyFireball (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181858632792468034, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5efac50bda3af468aa8f41042cecc5, type: 3}
