@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.9291687, y: 0}
+  m_AnchoredPosition: {x: -2.929165, y: 0}
   m_SizeDelta: {x: 14.1417, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30005337
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 113638349}
   m_Layer: 0
   m_Name: BossEnemy
-  m_TagString: BossEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad51440b45bc2a40887d394c79122a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1500
   slider: {fileID: 1616286307}
 --- !u!61 &113638348
 BoxCollider2D:
@@ -522,7 +522,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013639823, y: -0.014916841}
+  m_Offset: {x: 0.007823199, y: -0.014916837}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -533,7 +533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26111546, y: 0.27603024}
+  m_Size: {x: 0.2727487, y: 0.27603024}
   m_EdgeRadius: 0
 --- !u!50 &113638349
 Rigidbody2D:
@@ -571,9 +571,9 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   moveSpeed: 2
-  rb: {fileID: 113638349}
   target: {fileID: 472436913}
   moveDirection: {x: 0, y: 0}
+  force: 0
 --- !u!1 &131705451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,9 +4676,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 30005336}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1500
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 1500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
