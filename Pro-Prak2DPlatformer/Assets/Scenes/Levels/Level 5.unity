@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 654156760}
   m_Layer: 0
   m_Name: BossEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -839,7 +839,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4841409092833791354, guid: 59a77fadbba25d14b813a011915c102b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad51440b45bc2a40887d394c79122a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1500
   slider: {fileID: 1576062492}
 --- !u!1 &705244705
 GameObject:
