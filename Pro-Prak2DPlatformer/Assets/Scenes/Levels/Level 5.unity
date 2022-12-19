@@ -753,6 +753,9 @@ GameObject:
   - component: {fileID: 654156755}
   - component: {fileID: 654156759}
   - component: {fileID: 654156761}
+  - component: {fileID: 654156764}
+  - component: {fileID: 654156763}
+  - component: {fileID: 654156762}
   m_Layer: 8
   m_Name: BossEnemy
   m_TagString: Death
@@ -840,8 +843,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654156754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.84, y: 4.3, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalPosition: {x: 15.67, y: 2.38, z: 0}
+  m_LocalScale: {x: 11.6205, y: 9.9791, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -855,7 +858,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654156754}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -866,7 +869,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &654156761
 BoxCollider2D:
@@ -894,6 +897,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24779643, y: 0.25402212}
   m_EdgeRadius: 0
+--- !u!114 &654156762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654156754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d5b3f2b8ed5264cb84487248b2c970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  enragedAttackDamage: 40
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &654156763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654156754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c36ea0ee113684696ce8885736c6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  deathEffect: {fileID: 1576062490}
+  isInvulnerable: 0
+--- !u!114 &654156764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654156754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6cab9ff2a50dd4ab38787289adbf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1482426148}
+  isFlipped: 0
 --- !u!1 &705244705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,9 +2568,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2126782045}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1500
+  m_MaxValue: 500
   m_WholeNumbers: 1
-  m_Value: 1500
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
