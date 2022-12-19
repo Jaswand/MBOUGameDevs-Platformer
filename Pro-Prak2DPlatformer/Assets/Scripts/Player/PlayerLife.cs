@@ -13,7 +13,8 @@ public class PlayerLife : MonoBehaviour
     private Vector3 respawnPoint;
     private GameObject fallDetector;
     private Collider2D _collider;
-
+    public bool invincible;
+    public SpriteRenderer sprite;
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect2;
     [SerializeField] private AudioSource Rumbling;
@@ -23,6 +24,7 @@ public class PlayerLife : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         respawnPoint = transform.position;
 
          if ( Instance != null && Instance != this )
@@ -39,7 +41,6 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
-            deathSoundEffect.Play();
             Damage(50);
         } 
         if (collision.gameObject.CompareTag("Border"))
@@ -68,16 +69,27 @@ public class PlayerLife : MonoBehaviour
    
     }
 
+    IEnumerator timer()
+    {
+        if(health > 0)
+        {
+            sprite.color = Color.grey;
+            yield return new WaitForSecondsRealtime(1);
+            invincible = false;
+            sprite.color = Color.white;
+        }
+    }
     public void Damage(int amount)
     {
-        if(amount < 0)
+        if(!invincible)
         {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
+            deathSoundEffect.Play();
+            this.health -= amount;
+            invincible = true;
+            StartCoroutine(timer());
         }
 
-        this.health -= amount;
-
-        if(health <= 0)
+        if (health <= 0)
         {  
             Die();
         }
