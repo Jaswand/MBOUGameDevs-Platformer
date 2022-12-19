@@ -208,7 +208,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0725348, y: -0.810507}
+  m_Offset: {x: -0.06729317, y: -0.8157481}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -219,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39168894, y: 0.18805492}
+  m_Size: {x: 0.49651527, y: 0.19853711}
   m_EdgeRadius: 0
 --- !u!114 &8369355039516622010
 MonoBehaviour:
@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  invincible: 0
+  sprite: {fileID: 0}
   deathSoundEffect: {fileID: 1622065100}
   deathSoundEffect2: {fileID: 1622065099}
   Rumbling: {fileID: 0}
@@ -702,8 +704,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.092434704, y: 0.0520162}
-  m_Size: {x: 0.7805723, y: 1.9046842}
+  m_Offset: {x: -0.08862997, y: 0.036662042}
+  m_Size: {x: 0.6669786, y: 1.7321161}
   m_Direction: 0
 --- !u!114 &6319512173515602199
 MonoBehaviour:
@@ -759,4 +761,4 @@ MonoBehaviour:
   shootSpeed: 900
   shootTimer: 1
   shootPosition: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 8129951408099271344, guid: 9dbdb1dbe3d412d4e9da069c86e60337, type: 3}
