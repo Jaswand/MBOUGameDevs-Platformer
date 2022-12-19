@@ -49,8 +49,14 @@ public class ProjectileDestroy : MonoBehaviour
         {
             Health health = collisionGameObject.GetComponent<Health>();
             health.Damage(damage);
+
+        }
+        else if (collisionGameObject.layer == 9)
+        {
+            BossHealth health = collisionGameObject.GetComponent<BossHealth>();
+            health.TakeDamage(damage);
         }
 
-
     }
+
 }
