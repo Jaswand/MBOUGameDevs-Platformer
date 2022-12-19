@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-	private int amount;
+	public static BossHealth Instance { get; set; }
 
 	public int health = 500;
 
 	public GameObject deathEffect;
+
+	private Animator ani;
 
 	public bool isInvulnerable = false;
 
@@ -19,7 +21,7 @@ public class BossHealth : MonoBehaviour
 
 		health -= damage;
 
-		if (health <= 200)
+		if (health <= 250)
 		{
 			GetComponent<Animator>().SetBool("IsEnraged", true);
 		}
@@ -30,16 +32,28 @@ public class BossHealth : MonoBehaviour
 		}
 	}
 
-	void Die()
+    private void Start()
+    {
+		if (Instance != null && Instance != this)
+		{
+			Destroy(this);
+		}
+		else
+		{
+			Instance = this;
+		}
+
+		ani = GetComponent<Animator>();
+	}
+
+	private void Destroy()
 	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}
 
-	private void Update()
+	void Die()
 	{
-		slider.value = BossHealth.Instance.health;
-		text.text = "health: " + BossHealth.Instance.health;
+		ani.SetTrigger("Death");
 	}
 
 }

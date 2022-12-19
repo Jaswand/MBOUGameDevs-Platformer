@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss_Run : StateMachineBehaviour
 {
 
-	public float speed = 2.5f;
+	public float speed = 1.5f;
 	public float attackRange = 3f;
 
 	Transform player;
@@ -30,7 +30,7 @@ public class Boss_Run : StateMachineBehaviour
 		Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
 		rb.MovePosition(newPos);
 
-		if (Vector2.Distance(player.position, rb.position) <= attackRange)
+		if (Vector2.Distance(player.position, rb.position) <= attackRange && PlayerLife.Instance.health > 0)
 		{
 			animator.SetTrigger("Attack");
 		}
