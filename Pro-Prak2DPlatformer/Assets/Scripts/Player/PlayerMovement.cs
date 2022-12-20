@@ -15,10 +15,15 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D bc;
     private bool canDoubleJump;
 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashPower = 25f;
+    private float dashTime = 0.2f;
+    private float dashCooldown = 5f;
 
     private bool grounded;
 
-    public float maxSpeed = 20f;
+    public float maxSpeed = 25f;
 
     public float directionX = 0f;
     public float moveSpeed = 7f;
@@ -27,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask jumpableGround;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource dashSoundEffect;
+    [SerializeField] private TrailRenderer tr;
 
     // Start is called before the first frame update
     private void Start()
@@ -47,8 +54,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         directionX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(directionX * moveSpeed, rb.velocity.y);
-        ani.SetFloat("run", Mathf.Abs(directionX));
+        if (isDashing == false)
+        {
+            rb.velocity = new Vector2(directionX * moveSpeed, rb.velocity.y);
+            ani.SetFloat("run", Mathf.Abs(directionX));
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -59,10 +69,24 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateAnimation();
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            dashSoundEffect.Play();
+            StartCoroutine(Dash());
+        }
+    }
+    private void FixedUpdate()
+    {
         if (rb.velocity.x > maxSpeed)
         {
             rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
         }
+        
+        if (isDashing)
+        {
+            return;
+        }
+
     }
     private void Jump()
     {
@@ -122,5 +146,22 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        // How fast the player dashes
+        rb.velocity = new Vector2(transform.localScale.x * dashPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }

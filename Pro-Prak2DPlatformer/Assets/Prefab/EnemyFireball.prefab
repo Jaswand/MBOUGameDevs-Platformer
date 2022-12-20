@@ -99,10 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ac2f5660566c94fb2ff483a523e26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
   speed: 5
   resetTime: 5
-  impact: {fileID: 4643787949211465780}
 --- !u!60 &3544095018855844772
 PolygonCollider2D:
   m_ObjectHideFlags: 0
