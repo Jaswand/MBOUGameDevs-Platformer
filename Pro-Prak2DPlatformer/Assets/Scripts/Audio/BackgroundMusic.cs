@@ -25,7 +25,7 @@ public class BackgroundMusic : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.M))
             audioSource.mute = !audioSource.mute;
     }
 }
